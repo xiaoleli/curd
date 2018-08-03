@@ -1,8 +1,5 @@
 package com.example.curd.common;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class RestResultGenerator {
     /**
      * 生成响应成功(带正文)的结果
@@ -13,7 +10,9 @@ public class RestResultGenerator {
      */
     public static <T> ResponseResult<T> genResult(T data,String message){
         ResponseResult<T> result = new ResponseResult<T>();
-        result.setData(data);
+        com.example.curd.common.data<T> dataResult=new data<T>();
+        dataResult.setTable(data);
+        result.setData(dataResult);
         result.setStatus("SUCCESS");
         result.setMessage(message);
         return result;
