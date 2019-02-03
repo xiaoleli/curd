@@ -11,8 +11,7 @@ public class RestResultGenerator {
     public static <T> ResponseResult<T> genResult(T data,String message){
         ResponseResult<T> result = new ResponseResult<T>();
         com.example.curd.common.data<T> dataResult=new data<T>();
-        dataResult.setTable(data);
-        result.setData(dataResult);
+        result.setData(data);
         result.setStatus("SUCCESS");
         result.setMessage(message);
         return result;
